@@ -16,7 +16,7 @@ $notaFilmex = 8.8;
 $notaFilme = $somaDeNotas / 5;
 $incluidoNoPlano = true;
 
-echo $nomeFilme;
+echo "nomeFilme = " + $nomeFilme;
 echo "
 ";
 
