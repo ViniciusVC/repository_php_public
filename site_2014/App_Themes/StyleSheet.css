@@ -1,0 +1,142 @@
+﻿
+
+body
+{
+	background-color:#B6CCDE;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+#conteiner
+{
+	width: 800px;
+	position:absolute;
+	top:0px;
+	left:20%;
+	background-color: #ffffff;
+	background-position: top;
+	margin-left:5px;
+	color: #6D96BE;
+	/*margin:2px;*/
+}
+
+.textosaida
+{
+	width: 300px;
+}
+
+#cabecalho
+{
+	font-weight: bold;
+	width: 800px;
+	height: 221px;
+	color: #ffffff;
+	text-align: right;
+	background-image: url(../App_Themes/cabecalho01.jpg);
+	/*border-bottom: 3px solid #B5C7DE;*/
+}
+
+#barraesquerda
+{
+	width: 202px;
+	float:left;
+	height: 400px;
+	background-color: #CEDDEA;
+	background-image: url(../App_Themes/menu_lateral.jpg);
+	vertical-align: top;
+	text-align: left;
+}
+
+#contents
+{
+	font-size:12px;
+	width: 591px;
+	float:right;
+	background-color: #F0F4F9;
+	background-image: url(../App_Themes/contents.jpg);
+	vertical-align: top;
+	text-align: left;
+	border-top: 5px solid #ffffff;
+}
+
+#contfooter{
+	width: 591px;
+	height: 9px;
+	background-image: url(../App_Themes/contsombra.jpg);
+	vertical-align: bottom;
+}
+
+.margem
+{
+	width: 575px;
+	position:relative;
+	left:5px;
+}
+
+#barradireita
+{
+	width: 100px;
+	height: 400px;
+	float:right;
+    background-color: #dcdcdc;
+    vertical-align: top;
+    text-align: center;
+	border: 3px solid #ffffff; 
+}
+footer
+{
+	width: 800px;
+	height: 54px;
+	color:#FFFFFF;
+	background-color: #0066CC;
+	background-image: url(../App_Themes/rodape.jpg);
+	text-align: center;
+	clear:both;
+	font-size: 80%;
+}
+
+#footerlinks
+{
+	position:relative;
+	top:11px;
+	/*border-top: 3px solid #B5C7DE;*/
+}
+
+
+
+.tablecentroTH
+{
+    background-color: #dcdcdc;
+    padding-right: 7px;
+    padding-left: 7px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    font-weight: bold;
+    text-align: center;
+    height: 25px;
+}
+
+h1
+{
+	font-family: Verdana;
+	font-size:18px;
+	font-weight:bold;
+	/*font:bold;*/
+}
+
+h2
+{
+	font-family: Verdana;
+	font-size:16px;
+	font-weight:bold;
+	/*font:bold;*/
+}
+
+h3
+{
+	font-family: Verdana;
+	font-size:12px;
+	font-weight:bold;
+	/*font:bold;*/
+	
+}
