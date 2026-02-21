@@ -1,6 +1,10 @@
 # Estudo Drupal
 Repositório público PHP
 
+Estudo de desenvolviemnto com CMS Drupal no Lunux Ubuntu. (Usando PHP 8.3, Lando, Composer, Mariadb)
+
+<img alt="Drupal Logo" src="https://www.drupal.org/files/Wordmark_blue_RGB.png" height="60px">
+
 ![PHP](https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=white)
 
 # Projetos neste repositorio
@@ -178,8 +182,6 @@ Saia do container
 
 Copia o link e abra no navegador.
 
-
-
 # Matar todos os processos apagar o diretório:
 Parar processos deste projeto:
 ```
@@ -191,4 +193,49 @@ Apagar processos fantasmas:
 $ docker volume prune -f
 $ rm -rf /drupallandolinux
 ```
+
+# Instalar o Composer 
+
+Para instalar o Composer de forma global e persistente no Ubuntu 24.04:
+
+* 1. Download do Instalador
+
+Baixe o script de instalação oficial do PHP:
+
+> php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+
+* 2. Verificação de Integridade (Opcional, mas recomendado)
+
+Verifique o hash do instalador para garantir que não foi corrompido:
+
+> php -r "if (hash_file('sha384', 'composer-setup.php') === 'dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+
+(Nota: O hash acima muda conforme as versões; consulte getcomposer.org/download para o código mais recente).
+
+* 3. Instalação Global
+
+Instale o binário no diretório /usr/local/bin para que o comando fique disponível em todo o sistema:
+
+> sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+* 4. Limpeza e Verificação
+Remova o script de instalação e teste a versão:
+
+> php -r "unlink('composer-setup.php');"
+
+> composer --version
+
+Diagnóstico para o seu Ambiente (Lando/Drupal).
+
+Como você está no Ubuntu e usa o Lando:
+
+* Conflito de Versão: 
+O Composer instalado no host usará o PHP do seu sistema.
+
+* Dependências: 
+Se o Drupal exigir extensões que não estão no PHP 8.1 do host (como php-gd, php-xml, php-mbstring), a instalação do Drupal pelo host pode falhar.
+
+* Solução: 
+Se o composer create-project reclamar de extensões ausentes, instale-as no Ubuntu:
+sudo apt update && sudo apt install php8.1-cli php8.1-common php8.1-gd php8.1-xml php8.1-mbstring php8.1-curl php8.1-zip -y
 
