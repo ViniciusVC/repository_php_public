@@ -83,7 +83,7 @@ config:
 > lando start
 
 
-# Instalação e configura o banco de dados 
+# 4. Instalação e configura o banco de dados 
 
 sem interface web:
 
@@ -94,7 +94,7 @@ Se não funcionar use explicitamente o caminho do drush e o comando do PHP.
 > $ lando php /app/vendor/bin/drush site:install --db-url=mysql://drupal:drupal@database:3306/drupal --account-name=admin --account-pass=admin -y -vvv
 
 
-# Dar permissões de escrita na pasta
+# 5. Dar permissões de escrita na pasta
 (Necessário no Linux)
 Libere para o Lando gerenciar as configurações:
 
@@ -105,14 +105,14 @@ Libere para o Lando gerenciar as configurações:
 
 > lando drush site:install --db-url=mysql://mariadb:mariadb@database/mariadb --account-name=admin --account-pass=admin -y --root=/app/web
 
-# Criar URL de acesso:
+# 6. Criar URL de acesso:
 
 > lando drush uli --uri=https://drupallandolinux.lndo.site --root=/app/web
 
 Copia o link e abra no navegador.
 
 
-#Se algo der errado:
+# Se algo der errado:
 
 Tentativa simples:
 
@@ -239,3 +239,20 @@ Se o Drupal exigir extensões que não estão no PHP 8.1 do host (como php-gd, p
 Se o composer create-project reclamar de extensões ausentes, instale-as no Ubuntu:
 sudo apt update && sudo apt install php8.1-cli php8.1-common php8.1-gd php8.1-xml php8.1-mbstring php8.1-curl php8.1-zip -y
 
+
+# MODULOS
+
+* Procure o modulo em:
+> www.drupal.org/project/nome_do_modulo
+
+* Baixar o modulo:
+> composer require 'drupal/nome_do_modulo:^9.9'
+
+* Ativar o modulo
+> lando drush en nome_do_modulo -y
+
+* Limpar de Cache: 
+> lando drush cr
+
+* desativar o modulo:
+> lando drush pmu nome_do_modulo -y
